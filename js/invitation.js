@@ -30,7 +30,7 @@
         <img class="hero-art" src="${data.media.heroPoster ? text(safeURL(data.media.heroPoster)) : asset('hero-first.webp')}" alt="${text(theme.scene)}" decoding="async">
         <video class="hero-video" id="hero-video" muted loop playsinline preload="none" hidden></video>
         <div class="hero-copy"><p class="occasion">The wedding of</p><p class="date">${text(data.wedding.dateLabel)}</p>
-          <h1 class="names" id="names" tabindex="-1"><span>${text(data.couple.first)}</span><i>&amp;</i><span>${text(data.couple.second)}</span></h1>
+          <h1 class="names" id="names"><span>${text(data.couple.first)}</span><i>&amp;</i><span>${text(data.couple.second)}</span></h1>
           <p class="hero-note">${text(data.couple.heroNote)}</p><a class="hero-link" href="#our-invitation">With love, you are invited</a>
         </div>
       </section>
@@ -125,7 +125,6 @@
     syncMotion();
     $('music').hidden=!source('music');
     beginObservers();
-    $('names').focus({preventScroll:true});
     fadeTimer=setTimeout(()=>{$('entrance').hidden=true;opening.pause();},reduced.matches?0:900);
   }
   async function openInvitation() {
